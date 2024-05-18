@@ -40,8 +40,13 @@ class TV:
             self.channel += 1
         return self.channel
 
+    #   create method that decreases channel number by 1
+    def channel_down(self):
+        if self.channel > 1:
+            self.channel -= 2
+        return self.channel
 
-#   create method that decreases channel number by 1
+
 #   create method that increases volume level by 1
 #   create method that decreases volume level by 1
 
@@ -61,4 +66,7 @@ tv_2.set_volume(7)
 print(f"tv1's channel is {tv_1.get_channel()} and volume level is {tv_1.get_volume()}")
 print(f"tv2's channel is {tv_2.get_channel()} and volume level is {tv_2.get_volume()}")
 
+
+# Disregard this part
 print(f"Next channel to tv1 is {tv_1.channel_up()}")  # For the purpose of testing the method
+print(f"Previous channel to tv1 is Channel {tv_1.channel_down()}")  # For the purpose of testing the method
