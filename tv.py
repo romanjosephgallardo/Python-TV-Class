@@ -75,8 +75,3 @@ tv_2.set_volume(7)
 print(f"tv1's channel is {tv_1.get_channel()} and volume level is {tv_1.get_volume()}")
 print(f"tv2's channel is {tv_2.get_channel()} and volume level is {tv_2.get_volume()}")
 
-# Disregard this part
-print(f"Next channel to tv1 is {tv_1.channel_up()}")  # For the purpose of testing the method
-print(f"Previous channel to tv1 is Channel {tv_1.channel_down()}")  # For the purpose of testing the method
-print(f"Volume up next to {tv_1.volume_up()}")  # For the purpose of testing the method
-print(f"Volume down test: {tv_1.volume_down()}")  # For the purpose of testing the method
