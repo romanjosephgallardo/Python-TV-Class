@@ -34,8 +34,12 @@ class TV:
         if volume_level in range(1, 8):
             self.volume_level = volume_level
 
+    #   create method that increases channel number by 1
+    def channel_up(self):
+        if self.channel < 120:
+            self.channel += 1
 
-#   create method that increases channel number by 1
+
 #   create method that decreases channel number by 1
 #   create method that increases volume level by 1
 #   create method that decreases volume level by 1
