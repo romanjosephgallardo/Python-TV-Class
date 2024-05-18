@@ -21,7 +21,7 @@ class TV:
 
     #  create method that sets new channel
     def set_channel(self, channel):
-        if channel in range (1, 121):
+        if channel in range(1, 121):
             self.channel = channel
 #   create method that gets the volume level
 #   create method that sets new volume
