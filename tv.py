@@ -5,6 +5,7 @@ class TV:
     # create method for default TV object
     def __init__(self):
         self.on = False
+        self.channel = 1
 
     # create method for turning on TV
     def turn_on(self):
@@ -13,7 +14,11 @@ class TV:
     # create method for turning off TV
     def turn_off(self):
         self.on = False
-#   create method that returns the channel
+
+    #  create method that returns the channel
+    def get_channel(self):
+        return self.channel
+
 #   create method that sets new channel
 #   create method that gets the volume level
 #   create method that sets new volume
