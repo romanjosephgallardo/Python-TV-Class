@@ -1,6 +1,8 @@
 # pseudocode
 
 # create TV class
+class TV:
+
 #   create method for default TV object
 #   create method for turning on TV
 #   create method for turning off TV
