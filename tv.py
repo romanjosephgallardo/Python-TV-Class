@@ -6,7 +6,7 @@ class TV:
     def __init__(self):
         self.on = False
         self.channel = 1
-        self.volume = 1
+        self.volume_level = 1
 
     # create method for turning on TV
     def turn_on(self):
@@ -27,12 +27,12 @@ class TV:
 
     #  create method that gets the volume level
     def get_volume(self):
-        return self.volume
+        return self.volume_level
 
     #   create method that sets new volume
-    def set_volume(self, volume):
-        if volume in range(1, 8):
-            self.volume = volume
+    def set_volume(self, volume_level):
+        if volume_level in range(1, 8):
+            self.volume_level = volume_level
 
 
 #   create method that increases channel number by 1
