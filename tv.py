@@ -19,7 +19,10 @@ class TV:
     def get_channel(self):
         return self.channel
 
-#   create method that sets new channel
+    #  create method that sets new channel
+    def set_channel(self, channel):
+        if channel in range (1, 121):
+            self.channel = channel
 #   create method that gets the volume level
 #   create method that sets new volume
 #   create method that increases channel number by 1
