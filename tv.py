@@ -2,9 +2,13 @@
 
 # create TV class
 class TV:
+    # create method for default TV object
+    def __init__(self):
+        self.on = False
 
-#   create method for default TV object
-#   create method for turning on TV
+    # create method for turning on TV
+    def turn_on(self):
+        self.on = True
 #   create method for turning off TV
 #   create method that returns the channel
 #   create method that sets new channel
