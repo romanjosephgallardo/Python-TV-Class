@@ -9,7 +9,10 @@ class TV:
     # create method for turning on TV
     def turn_on(self):
         self.on = True
-#   create method for turning off TV
+
+    # create method for turning off TV
+    def turn_off(self):
+        self.on = False
 #   create method that returns the channel
 #   create method that sets new channel
 #   create method that gets the volume level
