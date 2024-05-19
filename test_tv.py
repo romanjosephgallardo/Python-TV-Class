@@ -69,6 +69,9 @@ while True:
             # Enters a specific channel
             try:
                 new_channel = int(input("Enter the channel (1-120): "))
+                if new_channel > 121 or new_channel < 0:
+                    print("Invalid input. Please enter 1-7 only.")
+                    continue
                 selected_tv.set_channel(new_channel)
             except ValueError:
                 print("Invalid input. Please enter 1-120 only.")
