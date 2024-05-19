@@ -8,7 +8,7 @@ def main():
         tv_program.select_tv()
     except:
         # Catches any errors
-        print("\nAn unexpected error occurred. Stopping the program...")
+        print("\nAn unexpected error occurred. Terminating the program...")
 
 
 main()
