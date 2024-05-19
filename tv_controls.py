@@ -33,8 +33,8 @@ class TVController:
     def display_output_message(self, message):
         """Display formatted message for errors and other outputs."""
         horizontal_border = "—" * 50
-        formatted_message = (f"{horizontal_border}\n\n"
-                             f"{message.center(50)}\n\n"
+        formatted_message = (f"{horizontal_border}\n"
+                             f"{message.center(50)}\n"
                              f"{horizontal_border}")
         print(formatted_message)
 
@@ -45,7 +45,8 @@ class TVController:
         """
         while True:
             # Displays options to user
-            print("\nChoose a TV to control! \n"
+            print("\n" + "-" * 50)
+            print("Choose a TV to control! \n"
                   " 1. TV 1 \n"
                   " 2. TV 2 \n"
                   " 3. Show the two TV status \n"
@@ -53,7 +54,7 @@ class TVController:
 
             try:
                 # Get user's input choice
-                tv_choice = int(input("Enter your option: "))
+                tv_choice = int(input("Enter your option (1-4): "))
                 if tv_choice == 1:
                     self.controlling_the_tv(self.tv_1, "tv1")
                 elif tv_choice == 2:
@@ -76,7 +77,8 @@ class TVController:
         """ Provides a menu for controlling the selected TV and its channel or volume."""
         while True:
             # Display control options to the user
-            print(f"\nControlling the {tv_name}. Choose an action: \n"
+            print("\n" + "-" * 50)
+            print(f"Controlling the {tv_name}. Choose an action: \n"
                   " 1. Increase Channel \n"
                   " 2. Decrease Channel \n"
                   " 3. Set Channel \n"
