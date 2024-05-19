@@ -29,10 +29,9 @@ class TVController:
                 # Get user's input choice
                 tv_choice = int(input("Enter your option: "))
                 if tv_choice == 1:
-                    selected_tv = self.tv_1
-                    tv_name = "TV 1"
+                    self.controlling_the_tv(self.tv_1, "tv1")
                 elif tv_choice == 2:
-                    selected_tv = self.tv_2
+                    self.controlling_the_tv(self.tv_2, "tv2")
                     tv_name = "TV 2"
                 elif tv_choice == 3:
                     print()
