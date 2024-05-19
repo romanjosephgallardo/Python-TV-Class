@@ -29,16 +29,16 @@ while True:
         tv_name = "TV 1"
 
     # For TV 2
-    if tv_choice == '2':
+    elif tv_choice == '2':
         selected_tv = tv_2
         tv_name = "TV 2"
 
-    if tv_choice == '3':
+    elif tv_choice == '3':
         display_tv_status(tv_name,tv_1.get_channel(), tv_1.get_volume())
         display_tv_status(tv_name, tv_1.get_channel(), tv_1.get_volume())
         continue
 
-    if tv_choice == '4':
+    elif tv_choice == '4':
         print("Thank you for using the program!")
         break
 
@@ -54,13 +54,13 @@ while True:
     # Performing the action
     if action_choice == '1':
         selected_tv.channel_up()
-    if action_choice == '2':
+    elif action_choice == '2':
         selected_tv.channel_down()
-    if action_choice == '3':
+    elif action_choice == '3':
         selected_tv.volume_up()
-    if action_choice == '4':
+    elif action_choice == '4':
         selected_tv.volume_down()
-    if action_choice == '5':
+    elif action_choice == '5':
         continue
 
     # Print the channel and volume level of the two TV OBJECT
