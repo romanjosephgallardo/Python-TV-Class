@@ -3,7 +3,7 @@ from tv import TV
 
 def display_tv_status(tv, tv_number):
     # Prints the current status of the TV
-    print(f"{tv_number}'s channel is {tv.get_channel()} and volume level is {tv.get_volume()}")
+    print(f"{tv_number}'s channel is {tv.get_channel()} and volume level is {tv.get_volume()}".center(50))
 
 
 # create two TV objects
@@ -33,8 +33,10 @@ while True:
             tv_name = "TV 2"
         elif tv_choice == 3:
             print()
+            print("—" * 50)
             display_tv_status(tv_1, "tv1")
             display_tv_status(tv_2, "tv2")
+            print("—" * 50)
             continue
         elif tv_choice == 4:
             print("Thank you for using the program!")
