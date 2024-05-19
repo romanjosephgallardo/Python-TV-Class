@@ -35,6 +35,7 @@ while True:
         tv_name = "TV 2"
 
     elif tv_choice == '3':
+        print()
         display_tv_status(tv_1, "tv1")
         display_tv_status(tv_2, "tv2")
         continue
