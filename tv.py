@@ -36,6 +36,8 @@ class TV:
     # Increases the channel number by 1
     def channel_up(self):
         self.channel = (self.channel + 1) % 120
+        if self.channel == 0:
+            self.channel = self.channel + 120
         return self.channel
 
     # Decreases channel number by 1
