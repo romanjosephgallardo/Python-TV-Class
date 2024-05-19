@@ -67,8 +67,12 @@ while True:
             selected_tv.volume_down()
         elif action_choice == '5':
             continue
+        else:
+            print("Invalid input. Please enter 1-4 only.")
+            continue
     except ValueError:
         print("Invalid input. Please enter 1-5 only.")
+        continue
 
     # Print the channel and volume level of the two TV OBJECT
     display_tv_status(selected_tv, tv_name)
