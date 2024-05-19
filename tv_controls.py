@@ -12,7 +12,9 @@ class TVController:
 
     def display_tv_status(self, tv, tv_number):
         # Prints the current status of the TV
+        print("—" * 50)
         print(f"{tv_number}'s channel is {tv.get_channel()} and volume level is {tv.get_volume()}".center(50))
+        print("—" * 50)
 
     def display_output_message(self, message):
         # Display formatted message for errors and other outputs
