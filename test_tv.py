@@ -51,9 +51,11 @@ while True:
     print(f"\nControlling the {tv_name}. Choose an action: \n"
           " 1. Increase Channel \n"
           " 2. Decrease Channel \n"
-          " 3. Increase Volume \n"
-          " 4. Decrease Volume \n"
-          " 5. Back to TV Selection")
+          " 3. Set Channel \n"
+          " 4. Increase Volume \n"
+          " 5. Decrease Volume \n"
+          " 6. Set Volume \n"
+          " 7. Back to TV Selection")
 
     action_choice = input("Enter your choice (1-5): ")
 
@@ -64,10 +66,18 @@ while True:
         elif action_choice == '2':
             selected_tv.channel_down()
         elif action_choice == '3':
-            selected_tv.volume_up()
+            try:
+                new_channel = int(input("Enter the channel (1-120): "))
+                selected_tv.set_channel(new_channel)
+            except ValueError:
+                print("Invalid input. Please enter 1-4 only.")
+                continue
+
         elif action_choice == '4':
-            selected_tv.volume_down()
+            selected_tv.volume_up()
         elif action_choice == '5':
+            selected_tv.volume_down()
+        elif action_choice == '7':
             continue
         else:
             print("Invalid input. Please enter 1-4 only.")
