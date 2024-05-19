@@ -2,7 +2,7 @@ from tv_controls import TVController
 
 
 def main():
-    """Main function to run the TV control program."""
+    """Main function to run the TV program."""
     try:
         tv_program = TVController()
         tv_program.select_tv()

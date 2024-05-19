@@ -8,8 +8,8 @@ class TVController:
     """
     def __init__(self):
         """Initialize two TV objects and turn them on."""
-        self.tv_1 = TV()
-        self.tv_2 = TV()
+        self.tv_1 = TV()  # TV1 Object
+        self.tv_2 = TV()  # TV2 Object
         self.tv_1.turn_on()
         self.tv_2.turn_on()
 
