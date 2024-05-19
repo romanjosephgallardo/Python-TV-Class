@@ -1,6 +1,9 @@
-# create TV class
 class TV:
-    """A class to represent a TV set."""
+    """
+    A class to represent a TV set with basic functionality
+    such as turning on/off, changing channels (120 channels),
+    and adjusting volume.
+    """
     def __init__(self):
         self.on = False  # TV is initially off
         self.channel = 1  # Default channel is set to 1
