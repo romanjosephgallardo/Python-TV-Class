@@ -1,8 +1,9 @@
 from tv import TV
 
 
-def display_tv_status(tv_number, tv_channel, tv_volume):
-    print(f"{tv_number}'s channel is {tv_channel} and volume level is {tv_volume}")
+def display_tv_status(tv, tv_number):
+    # Prints the current status of the TV
+    print(f"{tv_number}'s channel is {tv.get_channel()} and volume level is {tv.get_volume()}")
 
 
 # create two TV objects
@@ -34,8 +35,8 @@ while True:
         tv_name = "TV 2"
 
     elif tv_choice == '3':
-        display_tv_status(tv_name,tv_1.get_channel(), tv_1.get_volume())
-        display_tv_status(tv_name, tv_1.get_channel(), tv_1.get_volume())
+        display_tv_status(tv_1, "tv1")
+        display_tv_status(tv_2, "tv2")
         continue
 
     elif tv_choice == '4':
@@ -64,5 +65,5 @@ while True:
         continue
 
     # Print the channel and volume level of the two TV OBJECT
-    display_tv_status(tv_name, selected_tv.get_channel(), selected_tv.get_volume())
+    display_tv_status(selected_tv, tv_name)
     continue
