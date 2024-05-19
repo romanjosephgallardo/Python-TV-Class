@@ -12,8 +12,19 @@ class TVController:
 
     def display_tv_status(self, tv, tv_number):
         # Prints the current status of the TV
-        print("—" * 50)
         print(f"{tv_number}'s channel is {tv.get_channel()} and volume level is {tv.get_volume()}".center(50))
+
+    def display_one_tv_status(self, tv, tv_number):
+        # Prints the current status of one TV only in a formatted style
+        print("\n" + "—" * 50)
+        self.display_tv_status(tv, tv_number)
+        print("—" * 50)
+
+    def display_two_tv_status(self, tv1, name1, tv2, name2):
+        # Prints the current status of two TVs in a formatted style.
+        print("\n" + "—" * 50)
+        self.display_tv_status(tv1, name1)
+        self.display_tv_status(tv2, name2)
         print("—" * 50)
 
     def display_output_message(self, message):
@@ -44,11 +55,7 @@ class TVController:
                     self.controlling_the_tv(self.tv_2, "tv2")
                 elif tv_choice == 3:
                     # Display the status of both TVs with format
-                    print()
-                    print("—" * 50)
-                    self.display_tv_status(self.tv_1, "tv1")
-                    self.display_tv_status(self.tv_2, "tv2")
-                    print("—" * 50)
+                    self.display_two_tv_status(self.tv_1, "tv1", self.tv_2, "tv2")
                     continue
                 elif tv_choice == 4:
                     self.display_output_message("Thank you for using the program!")
@@ -120,6 +127,6 @@ class TVController:
                 self.display_output_message("Invalid input. Please enter 1-5 only.")
                 continue
 
-            self.display_tv_status(selected_tv, tv_name)
+            self.display_one_tv_status(selected_tv, tv_name)
             break
 
