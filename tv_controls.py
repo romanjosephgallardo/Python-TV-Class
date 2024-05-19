@@ -14,6 +14,14 @@ class TVController:
         # Prints the current status of the TV
         print(f"{tv_number}'s channel is {tv.get_channel()} and volume level is {tv.get_volume()}".center(50))
 
+    def display_output_message(self, message):
+        # Display formatted message for errors and other outputs
+        horizontal_border = "—" * 50
+        formatted_message = (f"{horizontal_border}\n\n"
+                             f"{message.center(50)}\n\n"
+                             f"{horizontal_border}")
+        print(formatted_message)
+
     # Interaction with user
     def select_tv(self):
         # Loop for selecting a TV to control or displaying status of two TVs
@@ -32,7 +40,6 @@ class TVController:
                     self.controlling_the_tv(self.tv_1, "tv1")
                 elif tv_choice == 2:
                     self.controlling_the_tv(self.tv_2, "tv2")
-                    tv_name = "TV 2"
                 elif tv_choice == 3:
                     # Display the status of both TVs with format
                     print()
@@ -42,13 +49,13 @@ class TVController:
                     print("—" * 50)
                     continue
                 elif tv_choice == 4:
-                    print("Thank you for using the program!")
+                    self.display_output_message("Thank you for using the program!")
                     break
                 else:
-                    print("Invalid input. Please enter 1-4 only.")
+                    self.display_output_message("Invalid input. Please enter 1-4 only.")
                     continue
             except ValueError:
-                print("Invalid input. Please enter 1-4 only.")
+                self.display_output_message("Invalid input. Please enter 1-4 only.")
                 continue
 
     def controlling_the_tv(self, selected_tv, tv_name):
@@ -77,14 +84,14 @@ class TVController:
                     try:
                         new_channel = int(input("Enter the channel (1-120): "))
                         if new_channel > 121 or new_channel < 0:
-                            print("Invalid input. Please enter 1-7 only.")
+                            self.display_output_message("Invalid input. Please enter 1-7 only.")
                             continue
                         else:
                             selected_tv.set_channel(new_channel)
                             self.display_tv_status(selected_tv, tv_name)
                             break
                     except ValueError:
-                        print("Invalid input. Please enter 1-120 only.")
+                        self.display_output_message("Invalid input. Please enter 1-120 only.")
                         continue
                 elif action_choice == '4':
                     selected_tv.volume_up()
@@ -95,20 +102,20 @@ class TVController:
                     try:
                         entered_volume = int(input("Enter the volume: "))
                         if entered_volume > 7 or entered_volume < 0:
-                            print("Invalid input. Please enter 1-7 only.")
+                            self.display_output_message("Invalid input. Please enter 1-7 only.")
                             continue
                         else:
                             selected_tv.set_volume(entered_volume)
                     except ValueError:
-                        print("Invalid input. Please enter 1-7 only.")
+                        self.display_output_message("Invalid input. Please enter 1-7 only.")
                         continue
                 elif action_choice == '7':
                     break
                 else:
-                    print("Invalid input. Please enter 1-7 only.")
+                    self.display_output_message("Invalid input. Please enter 1-7 only.")
                     continue
             except ValueError:
-                print("Invalid input. Please enter 1-5 only.")
+                self.display_output_message("Invalid input. Please enter 1-5 only.")
                 continue
 
             self.display_tv_status(selected_tv, tv_name)
