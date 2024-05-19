@@ -23,26 +23,28 @@ while True:
           " 3. Show the two TV status \n"
           " 4. Exit the program")
 
-    tv_choice = input("Enter your option: ")
-
-    if tv_choice == '1':
-        selected_tv = tv_1
-        tv_name = "TV 1"
-
-    # For TV 2
-    elif tv_choice == '2':
-        selected_tv = tv_2
-        tv_name = "TV 2"
-
-    elif tv_choice == '3':
-        print()
-        display_tv_status(tv_1, "tv1")
-        display_tv_status(tv_2, "tv2")
+    try:
+        tv_choice = int(input("Enter your option: "))
+        if tv_choice == 1:
+            selected_tv = tv_1
+            tv_name = "TV 1"
+        elif tv_choice == 2:
+            selected_tv = tv_2
+            tv_name = "TV 2"
+        elif tv_choice == 3:
+            print()
+            display_tv_status(tv_1, "tv1")
+            display_tv_status(tv_2, "tv2")
+            continue
+        elif tv_choice == 4:
+            print("Thank you for using the program!")
+            break
+        else:
+            print("Invalid input. Please enter 1-4 only.")
+            continue
+    except ValueError:
+        print("Invalid input. Please enter 1-4 only.")
         continue
-
-    elif tv_choice == '4':
-        print("Thank you for using the program!")
-        break
 
     print(f"\nControlling the {tv_name}. Choose an action: \n"
           " 1. Increase Channel \n"
@@ -54,16 +56,19 @@ while True:
     action_choice = input("Enter your choice (1-5): ")
 
     # Performing the action
-    if action_choice == '1':
-        selected_tv.channel_up()
-    elif action_choice == '2':
-        selected_tv.channel_down()
-    elif action_choice == '3':
-        selected_tv.volume_up()
-    elif action_choice == '4':
-        selected_tv.volume_down()
-    elif action_choice == '5':
-        continue
+    try:
+        if action_choice == '1':
+            selected_tv.channel_up()
+        elif action_choice == '2':
+            selected_tv.channel_down()
+        elif action_choice == '3':
+            selected_tv.volume_up()
+        elif action_choice == '4':
+            selected_tv.volume_down()
+        elif action_choice == '5':
+            continue
+    except ValueError:
+        print("Invalid input. Please enter 1-5 only.")
 
     # Print the channel and volume level of the two TV OBJECT
     display_tv_status(selected_tv, tv_name)
