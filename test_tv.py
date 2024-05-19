@@ -11,7 +11,7 @@ tv_2.turn_on()
 # Interaction with user
 while True:
     # Displays options to user
-    print("Choose a TV to control! \n"
+    print("\nChoose a TV to control! \n"
           " 1. TV 1 \n"
           " 2. TV 2 \n"
           " 3. Show the two TV status \n"
@@ -45,8 +45,8 @@ while True:
 
     # For TV 2
     if tv_choice == '2':
-        selected_tv = tv_1
-        tv_name = "TV 1"
+        selected_tv = tv_2
+        tv_name = "TV 2"
         print(f"\nControlling the {tv_name}. Choose an action: \n"
               " 1. Increase Channel \n"
               " 2. Decrease Channel \n"
@@ -67,6 +67,15 @@ while True:
             tv_2.volume_down()
         if action_choice == '5':
             continue
+
+    if tv_choice == '3':
+        print(f"tv1's channel is {tv_1.get_channel()} and volume level is {tv_1.get_volume()}")
+        print(f"tv2's channel is {tv_2.get_channel()} and volume level is {tv_2.get_volume()}")
+        continue
+
+    if tv_choice == '4':
+        print("Thank you for using the program!")
+        break
 
     # Print the channel and volume level of the two TV OBJECT
     print(f"tv1's channel is {tv_1.get_channel()} and volume level is {tv_1.get_volume()}")
