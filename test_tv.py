@@ -71,12 +71,23 @@ while True:
                 new_channel = int(input("Enter the channel (1-120): "))
                 selected_tv.set_channel(new_channel)
             except ValueError:
-                print("Invalid input. Please enter 1-4 only.")
+                print("Invalid input. Please enter 1-120 only.")
                 continue
         elif action_choice == '4':
             selected_tv.volume_up()
         elif action_choice == '5':
             selected_tv.volume_down()
+        elif action_choice == '6':
+            # Enters a specific volume
+            try:
+                entered_volume = int(input("Enter the volume: "))
+                if 7 < entered_volume < 0:
+                    print("Invalid input. Please enter 1-7 only.")
+                else:
+                    selected_tv.set_volume(entered_volume)
+            except ValueError:
+                print("Invalid input. Please enter 1-7 only.")
+                continue
         elif action_choice == '7':
             continue
         else:
