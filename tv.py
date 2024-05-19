@@ -1,13 +1,11 @@
-
-
 # create TV class
 class TV:
 
     # Initialize a TV object
     def __init__(self):
-        self.on = False
-        self.channel = 1
-        self.volume_level = 1
+        self.on = False  # TV is initially off
+        self.channel = 1  # Default channel is set to 1
+        self.volume_level = 1   # Default volume is set to 1
 
     # Turns on the TV
     def turn_on(self):
@@ -47,12 +45,12 @@ class TV:
 
     # Increases volume level by 1
     def volume_up(self):
-        self.volume_level = min(self.volume_level + 1, 7)
+        self.volume_level = min(self.volume_level + 1, 7)  # Stops at 7 if it exceeds 7
         return self.volume_level
 
     # Decreases volume level by 1
     def volume_down(self):
-        self.volume_level = max(self.volume_level - 1, 1)
+        self.volume_level = max(self.volume_level - 1, 1)  # Stops at 1 if it goes below 7
         return self.volume_level
 
 
