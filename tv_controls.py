@@ -1,43 +1,48 @@
 from tv import TV
 
 
-# Defines a TV controls
 class TVController:
+    """
+    A class to represent a TV controller that manages two TVs,
+    and specifically made for user-interaction purposes.
+    """
     def __init__(self):
-        # Initialize two TV objects and turn them on
+        """Initialize two TV objects and turn them on."""
         self.tv_1 = TV()
         self.tv_2 = TV()
         self.tv_1.turn_on()
         self.tv_2.turn_on()
 
     def display_tv_status(self, tv, tv_number):
-        # Prints the current status of the TV
+        """Prints the current status of the TV."""
         print(f"{tv_number}'s channel is {tv.get_channel()} and volume level is {tv.get_volume()}".center(50))
 
     def display_one_tv_status(self, tv, tv_number):
-        # Prints the current status of one TV only in a formatted style
+        """Prints the current status of one TV only in a formatted style."""
         print("\n" + "—" * 50)
         self.display_tv_status(tv, tv_number)
         print("—" * 50)
 
     def display_two_tv_status(self, tv1, name1, tv2, name2):
-        # Prints the current status of two TVs in a formatted style.
+        """Prints the current status of two TVs in a formatted style."""
         print("\n" + "—" * 50)
         self.display_tv_status(tv1, name1)
         self.display_tv_status(tv2, name2)
         print("—" * 50)
 
     def display_output_message(self, message):
-        # Display formatted message for errors and other outputs
+        """Display formatted message for errors and other outputs."""
         horizontal_border = "—" * 50
         formatted_message = (f"{horizontal_border}\n\n"
                              f"{message.center(50)}\n\n"
                              f"{horizontal_border}")
         print(formatted_message)
 
-    # Interaction with user
     def select_tv(self):
-        # Loop for selecting a TV to control or displaying status of two TVs
+        """
+        Provides a menu for user to select a TV to control,
+        or display a status of the two TV.
+        """
         while True:
             # Displays options to user
             print("\nChoose a TV to control! \n"
@@ -68,7 +73,7 @@ class TVController:
                 continue
 
     def controlling_the_tv(self, selected_tv, tv_name):
-        # Loop for controlling the selected TV and its channel or volume
+        """ Provides a menu for controlling the selected TV and its channel or volume."""
         while True:
             # Display control options to the user
             print(f"\nControlling the {tv_name}. Choose an action: \n"
@@ -93,11 +98,11 @@ class TVController:
                     try:
                         new_channel = int(input("Enter the channel (1-120): "))
                         if new_channel > 121 or new_channel < 0:
-                            self.display_output_message("Invalid input. Please enter 1-7 only.")
+                            self.display_output_message("Invalid input. Please enter 1-120 only.")
                             continue
                         else:
                             selected_tv.set_channel(new_channel)
-                            self.display_tv_status(selected_tv, tv_name)
+                            self.display_one_tv_status(selected_tv, tv_name)
                             break
                     except ValueError:
                         self.display_output_message("Invalid input. Please enter 1-120 only.")
@@ -107,7 +112,7 @@ class TVController:
                 elif action_choice == '5':
                     selected_tv.volume_down()
                 elif action_choice == '6':
-                    # Enters a specific volume
+                    # Set a specific volume
                     try:
                         entered_volume = int(input("Enter the volume: "))
                         if entered_volume > 7 or entered_volume < 0:
@@ -127,6 +132,7 @@ class TVController:
                 self.display_output_message("Invalid input. Please enter 1-5 only.")
                 continue
 
+            # Displays the output status for selected TV
             self.display_one_tv_status(selected_tv, tv_name)
             break
 
