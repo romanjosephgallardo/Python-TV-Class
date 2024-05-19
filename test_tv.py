@@ -1,5 +1,10 @@
 from tv import TV
 
+
+def display_tv_status(tv_number, tv_channel, tv_volume):
+    print(f"{tv_number}'s channel is {tv_channel} and volume level is {tv_volume}")
+
+
 # create two TV objects
 tv_1 = TV()
 tv_2 = TV()
@@ -29,8 +34,8 @@ while True:
         tv_name = "TV 2"
 
     if tv_choice == '3':
-        print(f"tv1's channel is {tv_1.get_channel()} and volume level is {tv_1.get_volume()}")
-        print(f"tv2's channel is {tv_2.get_channel()} and volume level is {tv_2.get_volume()}")
+        display_tv_status(tv_name,tv_1.get_channel(), tv_1.get_volume())
+        display_tv_status(tv_name, tv_1.get_channel(), tv_1.get_volume())
         continue
 
     if tv_choice == '4':
@@ -59,6 +64,5 @@ while True:
         continue
 
     # Print the channel and volume level of the two TV OBJECT
-    print(f"tv1's channel is {tv_1.get_channel()} and volume level is {tv_1.get_volume()}")
-    print(f"tv2's channel is {tv_2.get_channel()} and volume level is {tv_2.get_volume()}")
+    display_tv_status(tv_name, selected_tv.get_channel(), selected_tv.get_volume())
     continue
