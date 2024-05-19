@@ -40,8 +40,11 @@ class TV:
 
     # Decreases channel number by 1
     def channel_down(self):
-        self.channel = (self.channel - 2) % 120
-        return self.channel
+        self.channel = (self.channel - 1) % 120
+        if self.channel == 0:
+            self.channel = self.channel + 120
+        else:
+            return self.channel
 
     # Increases volume level by 1
     def volume_up(self):
