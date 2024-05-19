@@ -35,11 +35,11 @@ while True:
         if action_choice == '1':
             tv_1.channel_up()
         if action_choice == '2':
-            tv_2.channel_down()
+            tv_1.channel_down()
         if action_choice == '3':
             tv_1.volume_up()
         if action_choice == '4':
-            tv_2.volume_down()
+            tv_1.volume_down()
         if action_choice == '5':
             continue
 
