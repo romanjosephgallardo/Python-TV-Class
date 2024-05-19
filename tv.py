@@ -59,6 +59,3 @@ class TV:
         """Decreases volume level by 1."""
         self.volume_level = max(self.volume_level - 1, 1)  # Stops at 1 if it goes below 7
         return self.volume_level
-
-
-

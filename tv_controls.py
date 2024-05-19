@@ -138,4 +138,3 @@ class TVController:
             # Display the current status of the selected TV
             self.display_one_tv_status(selected_tv, tv_name)
             break
-
