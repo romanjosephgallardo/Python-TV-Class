@@ -81,8 +81,9 @@ while True:
             # Enters a specific volume
             try:
                 entered_volume = int(input("Enter the volume: "))
-                if 7 < entered_volume < 0:
+                if entered_volume > 7 or entered_volume < 0:
                     print("Invalid input. Please enter 1-7 only.")
+                    continue
                 else:
                     selected_tv.set_volume(entered_volume)
             except ValueError:
@@ -91,7 +92,7 @@ while True:
         elif action_choice == '7':
             continue
         else:
-            print("Invalid input. Please enter 1-4 only.")
+            print("Invalid input. Please enter 1-7 only.")
             continue
     except ValueError:
         print("Invalid input. Please enter 1-5 only.")
