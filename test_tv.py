@@ -34,6 +34,7 @@ class TVController:
                     self.controlling_the_tv(self.tv_2, "tv2")
                     tv_name = "TV 2"
                 elif tv_choice == 3:
+                    # Display the status of both TVs with format
                     print()
                     print("—" * 50)
                     self.display_tv_status(self.tv_1, "tv1")
@@ -53,6 +54,7 @@ class TVController:
     def controlling_the_tv(self, selected_tv, tv_name):
         # Loop for controlling the selected TV and its channel or volume
         while True:
+            # Display control options to the user
             print(f"\nControlling the {tv_name}. Choose an action: \n"
                   " 1. Increase Channel \n"
                   " 2. Decrease Channel \n"
@@ -62,7 +64,7 @@ class TVController:
                   " 6. Set Volume \n"
                   " 7. Back to TV Selection")
 
-            action_choice = input("Enter your choice (1-5): ")
+            action_choice = input("Enter your choice (1-7): ")
 
             # Performing the action
             try:
@@ -98,7 +100,7 @@ class TVController:
                         print("Invalid input. Please enter 1-7 only.")
                         continue
                 elif action_choice == '7':
-                    continue
+                    break
                 else:
                     print("Invalid input. Please enter 1-7 only.")
                     continue
@@ -106,6 +108,6 @@ class TVController:
                 print("Invalid input. Please enter 1-5 only.")
                 continue
 
-            # Print the channel and volume level of the two TV OBJECT
+            # Print the channel and volume level of the two TV objects
             self.display_tv_status(selected_tv, tv_name)
             continue
