@@ -70,12 +70,8 @@ class TVController:
             try:
                 if action_choice == '1':
                     selected_tv.channel_up()
-                    self.display_tv_status(selected_tv, tv_name)
-                    break
                 elif action_choice == '2':
                     selected_tv.channel_down()
-                    self.display_tv_status(selected_tv, tv_name)
-                    break
                 elif action_choice == '3':
                     # Set a specific channel
                     try:
@@ -92,12 +88,8 @@ class TVController:
                         continue
                 elif action_choice == '4':
                     selected_tv.volume_up()
-                    self.display_tv_status(selected_tv, tv_name)
-                    break
                 elif action_choice == '5':
                     selected_tv.volume_down()
-                    self.display_tv_status(selected_tv, tv_name)
-                    break
                 elif action_choice == '6':
                     # Enters a specific volume
                     try:
@@ -107,8 +99,6 @@ class TVController:
                             continue
                         else:
                             selected_tv.set_volume(entered_volume)
-                            self.display_tv_status(selected_tv, tv_name)
-                            break
                     except ValueError:
                         print("Invalid input. Please enter 1-7 only.")
                         continue
@@ -120,4 +110,7 @@ class TVController:
             except ValueError:
                 print("Invalid input. Please enter 1-5 only.")
                 continue
+
+            self.display_tv_status(selected_tv, tv_name)
+            break
 
