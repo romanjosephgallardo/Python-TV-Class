@@ -66,13 +66,13 @@ while True:
         elif action_choice == '2':
             selected_tv.channel_down()
         elif action_choice == '3':
+            # Enters a specific channel
             try:
                 new_channel = int(input("Enter the channel (1-120): "))
                 selected_tv.set_channel(new_channel)
             except ValueError:
                 print("Invalid input. Please enter 1-4 only.")
                 continue
-
         elif action_choice == '4':
             selected_tv.volume_up()
         elif action_choice == '5':
